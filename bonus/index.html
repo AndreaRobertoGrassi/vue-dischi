@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title></title>
+  </head>
+  <body>
+
+    <div id="app">
+      <!-- intestazione -->
+      <header>
+        <img :src="img" class="logo" alt="">
+      </header>
+
+      <!-- scelta del genere -->
+      <div class="genere-musicale">
+        <h3>Filtra per genere musicale</h5>
+        <select>
+          <option v-for="(genere, i) in generi" @click="scegliGenere(i)">{{genere}}</option>
+        </select>
+      </div>
+
+      <!-- corpo principale che contiene tutti i dischi-->
+      <main>
+        <div class="disco" v-for="disco in albums">
+          <img :src="disco.poster"alt="">
+          <h3 class="title">{{disco.title}}</h3>
+          <div>{{disco.author}}</div>
+          <div>{{disco.year}}</div>
+        </div>
+      </main>
+
+    </div>
+
+
+    <!-- script -->
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
