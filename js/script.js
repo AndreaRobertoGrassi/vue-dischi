@@ -1,6 +1,7 @@
 var app=new Vue({
   el:'#app',
   data:{
+    img:'spotify.png',
     albums:[]
   },
   mounted:function () {
@@ -8,6 +9,5 @@ var app=new Vue({
     .then((risposta) => {
       this.albums=risposta.data.response;
     });
-    console.log(this.albums);
   }
 })

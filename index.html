@@ -10,12 +10,20 @@
   <body>
 
     <div id="app">
-      <div class="disco" v-for="disco in albums">
-        <img :src="disco.poster"alt="">
-        <h3>{{disco.title}}</h3>
-        <div>{{disco.author}}</div>
-        <div>{{disco.year}}</div>
-      </div>
+      
+      <header>
+        <img :src="img" class="logo" alt="">
+      </header>
+
+      <main>
+        <div class="disco" v-for="disco in albums">
+          <img :src="disco.poster"alt="">
+          <h3 class="title">{{disco.title}}</h3>
+          <div>{{disco.author}}</div>
+          <div>{{disco.year}}</div>
+        </div>
+      </main>
+
     </div>
 
 
