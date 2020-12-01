@@ -10,11 +10,12 @@
   <body>
 
     <div id="app">
-      
+      <!-- intestazione -->
       <header>
         <img :src="img" class="logo" alt="">
       </header>
 
+      <!-- corpo principale che contiene tutti i dischi-->
       <main>
         <div class="disco" v-for="disco in albums">
           <img :src="disco.poster"alt="">
