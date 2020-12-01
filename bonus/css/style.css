@@ -1,3 +1,4 @@
+/* regole generali */
 *{
   margin:0;
   padding: 0;
@@ -6,8 +7,9 @@
 #app{
   background-color: rgba(5, 11, 29, 0.9);
   position: relative;
-  color: white;
 }
+
+/* intestazione */
 header{
   width: 100%;
   height: 50px;
@@ -20,6 +22,8 @@ header{
   width: 40px;
   height: auto;
 }
+
+/* sezione per scegliere il genre musicale */
 .genere-musicale{
   position: absolute;
   top: 100px;
@@ -27,11 +31,34 @@ header{
   border: 1px solid white;
   border-radius: 5px;
   padding: 10px;
+  color: lightgrey;
 }
-select{
+.genere-musicale .filtra{
   margin-top: 10px;
-  width: 100px;
 }
+.genere-musicale .filtra:hover{
+  cursor: pointer;
+}
+.icon-dropdown{
+  margin-left: 10px;
+}
+.icon-dropdown:hover{
+  cursor: pointer;
+  color: white;
+}
+.none{
+  display: none;
+}
+.block{
+  display: block;
+}
+.attiva{
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+/* main */
 main{
   width: 50%;
   height: calc(100vh - 50px);

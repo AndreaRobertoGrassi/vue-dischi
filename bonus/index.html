@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -10,6 +11,7 @@
   <body>
 
     <div id="app">
+
       <!-- intestazione -->
       <header>
         <img :src="img" class="logo" alt="">
@@ -17,10 +19,11 @@
 
       <!-- scelta del genere -->
       <div class="genere-musicale">
-        <h3>Filtra per genere musicale</h5>
-        <select>
-          <option v-for="(genere, i) in generi" @click="scegliGenere(i)">{{genere}}</option>
-        </select>
+        <h3>Filtra per genere
+          <i class="fas fa-chevron-down icon-dropdown" v-if="tendina=='none'" @click="dropdown"></i>
+          <i class="fas fa-chevron-up icon-dropdown" v-if="tendina=='block'" @click="dropdown"></i>
+        </h3>
+        <div class="filtra" v-for="(genere, i) in generi" v-if="tendina=='block'" :class="indiceAttivo==i && tendina=='block'?'attiva':''" @click="scegliGenere(i)">{{genere}}</div>
       </div>
 
       <!-- corpo principale che contiene tutti i dischi-->
