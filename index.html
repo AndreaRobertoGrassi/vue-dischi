@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title></title>
+  </head>
+  <body>
+
+    <div id="app">
+      <div class="disco" v-for="disco in albums">
+        <img :src="disco.poster"alt="">
+        <h3>{{disco.title}}</h3>
+        <div>{{disco.author}}</div>
+        <div>{{disco.year}}</div>
+      </div>
+    </div>
+
+
+    <!-- script -->
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
