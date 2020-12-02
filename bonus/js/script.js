@@ -4,9 +4,8 @@ var app=new Vue({
     img:'../spotify.png',  //logo
     albums:[],   //array che contiene tutti i dischi
     generi:['Tutti i generi'], //array che contiene i generi musicali
-    attiva:false,
-    indiceAttivo:0,
-    tendina:'none'
+    indiceAttivo:0,  //indice per selezionare il genere
+    tendina:'none'   //controlla il display per il genre musicale
   },
 
   mounted:function () {
