@@ -20,8 +20,7 @@
       <!-- scelta del genere -->
       <div class="genere-musicale">
         <h3>Filtra per genere
-          <i class="fas fa-chevron-down icon-dropdown" v-if="tendina=='none'" @click="dropdown"></i>
-          <i class="fas fa-chevron-up icon-dropdown" v-if="tendina=='block'" @click="dropdown"></i>
+          <i :class="tendina=='none'?'fas fa-chevron-down icon-dropdown':'fas fa-chevron-up icon-dropdown'" @click="dropdown"></i>
         </h3>
         <div class="filtra" v-for="(genere, i) in generi" v-if="tendina=='block'" :class="indiceAttivo==i && tendina=='block'?'attiva':''" @click="scegliGenere(i)">{{genere}}</div>
       </div>
