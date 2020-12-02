@@ -2,7 +2,8 @@ var app=new Vue({
   el:'#app',
   data:{
     img:'../spotify.png',  //logo
-    albums:[],   //array che contiene tutti i dischi
+    albums:[],   //array di appoggio per non richiamare l'api piu volte
+    albumsFiltrato:[], // array che contiene i dischi in base al filtraggio
     generi:['Tutti i generi'], //array che contiene i generi musicali
     indiceAttivo:0,  //indice per selezionare il genere
     tendina:'none'   //controlla il display per il genre musicale
@@ -11,6 +12,7 @@ var app=new Vue({
   mounted:function () {
     axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((risposta) => {
       this.albums=risposta.data.response;
+      this.albumsFiltrato=this.albums;
       this.albums.forEach((item, i) => {
         if (!this.generi.includes(item.genre)) {
           this.generi.push(item.genre);
@@ -32,16 +34,14 @@ var app=new Vue({
 
     //funzione per scegliere il genere
     scegliGenere:function (i) {
-      this.albums=[];
+      this.albumsFiltrato=[];
       this.indiceAttivo=i;
-      axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((risposta) => {
-        risposta.data.response.forEach((item) => {
-          if (item.genre==this.generi[i]) {
-            this.albums.push(item);
-          }else if(this.generi[i]=='Tutti i generi'){
-            this.albums.push(item);
-          }
-        });
+      this.albums.forEach((item) => {
+        if (item.genre==this.generi[i]) {
+          this.albumsFiltrato.push(item);
+        }else if(this.generi[i]=='Tutti i generi'){
+          this.albumsFiltrato.push(item);
+        }
       });
     }
   }

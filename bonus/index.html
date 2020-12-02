@@ -27,7 +27,7 @@
 
       <!-- corpo principale che contiene tutti i dischi-->
       <main>
-        <div class="disco" v-for="disco in albums">
+        <div class="disco" v-for="disco in albumsFiltrato">
           <img :src="disco.poster"alt="">
           <h3 class="title">{{disco.title}}</h3>
           <div>{{disco.author}}</div>
